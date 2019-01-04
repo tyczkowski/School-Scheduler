@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+    <div class="main-content">
+        <h1>Section List</h1>
+
+     <div style="padding: 16px;">  {# add button #}
+         <a href="/sections/add">
+            <p> [ Add ] </p>
+         </a>
+    </div>
+
+    {% for section in sections %}
+        <div style="padding: 32px; background-color: lightgray">
+            <p>
+                <a href="detail/{{ section.cnum }}{{ section.snum }}">
+                    {{ section.course.dept }} {{ section.cnum }} - {{ section.snum }}
+                </a>
+            </p>
+        </div> <br>
+
+        {% empty %}
+            <div>No Sections yet.</div>
+
+        {% endfor %}
+
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

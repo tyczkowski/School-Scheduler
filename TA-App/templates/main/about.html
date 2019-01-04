@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+
+
+    <div class="main-content">
+        <h1 id="aboutHeader">About</h1>
+        <div id="theAbout">
+            <p class="about">
+                This TA scheduling application/website was made with the intention of giving administrators and
+                supervisors the
+                ability to add and edit courses/accounts and assign instructors/TAs to them. This also allows users
+                to edit their
+                own contact information when added to the system.
+            </p>
+        </div>
+        <div id="theWho">
+            <p class="about">
+                This website is brought to you by BirdUp! (Tyler Carpio, Max Lowery, Matthew Shannon, Jasvinder
+                Singh and Sam Tyczkowski)
+            </p>
+        </div>
+        <div id="birdUpWrapper">
+            <div id="birdUp">
+            </div>
+        </div>
+    </div>
+    {% include "main/footer.html" %}
+
+{% endblock content %}

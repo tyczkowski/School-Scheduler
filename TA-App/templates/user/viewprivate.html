@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+    <div class="main-content">
+        <h1>Users:
+            {# TODO ceck if user can add #}
+        </h1>
+        <div>  {# edit button #}
+            {% if display_edit_link %}
+                <a href="{% url 'User Add' %}"><p>[Add A User]</p></a>
+            {% endif %}
+        </div>
+        <br>
+        {% if datafound %}
+            {% for entry in data %}
+                <div style="padding: 32px; background-color: lightgray">
+                    <p>User: {{ entry.username }}
+                        {% if display_edit_link %}
+                            <a href="/user/edit/{{ entry.username }}"> | Edit User</a>
+                            <a href="{% url 'assign_section' user=entry.username%}"> | Assign Section</a>
+                        </p>
+                        {% endif %}
+                    {% if entry.firstname|length > 0 %}
+                        <p>First Name: {{ entry.firstname }}</p>
+                    {% endif %}
+                    {% if entry.lastname|length > 0 %}
+                        <p>Last Name: {{ entry.lastname }}</p>
+                    {% endif %}
+                    {% if entry.email|length > 0 %}
+                        <p>Email: {{ entry.email }}</p>
+                    {% endif %}
+                    {% if entry.phone_number|length > 0 %}
+                        <p>Phonenum: {{ entry.phone_number }}</p>
+                    {% endif %}
+                    {% if entry.address|length > 0 %}
+                        <p>Address : {{ entry.address }}</p>
+                    {% endif %}
+                    <P>Assigned Courses:
+                        {% for course in entry.courses %}
+                            | <a href="/courses/detail/{{ course.dept }}{{ course.cnum }}"> {{ course.dept }}-{{course.cnum}}</a> |
+                        {% endfor %}
+                    </P>
+                    <p>Assigned Sections:
+                        {% for section in entry.sections %}
+                            | <a href="/sections/detail/{{ section.cnum }}{{ section.snum }}">{{ section.dept }}{{ section.cnum }}-{{section.snum}}</a> |
+                        {% endfor %}
+                    </p>
+                    {% if entry.bio|length > 0 %}
+                        <h3>Bio:</h3>
+                        <p>{{ entry.bio }}</p>
+                    {% endif %}
+                </div> <br>
+            {% endfor %}
+        {% else %}
+            <p>Currently no users</p>
+        {% endif %}
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

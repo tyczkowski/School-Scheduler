@@ -1,0 +1,253 @@
+/* Rock had a file for this but I'm not going to copy it over unless we actually need it because I don't want anything to break */
+{% load staticfiles %}
+
+body {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.headerMenu {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fdba2f;
+    width: 100%;
+    height: 50px;
+}
+
+ul.buttons {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-color: #fdba2f;
+    width: 100%;
+}
+
+.headerMenu ul li {
+    display:inline-block;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.headerMenu ul li#log{
+    display:inline-block;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+a.btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #FFFFFF;
+}
+
+a.bottomLinks:hover{
+    background-color: #4b4848;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    max-width: 50px;
+    max-height: 50px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    background-color: #fdba2f;
+
+}
+
+
+.btn {
+    background-color: #fdba2f;
+    color: white;
+    height: 100%;
+    width: auto;
+    float: left;
+    display: inline-block;
+    position: relative;
+    border: 2px black solid;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.btn-group {
+    margin: 0px;
+    padding: 0px;
+    background-color: #fdba2f;
+    height: 100%;
+}
+
+.footerMenu {
+	height: 20vh;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #232528;
+    position: relative;
+	bottom: 0;
+	clear: both;
+}
+#footerLinks {
+	background-color: #232528;
+	margin-left: auto;
+	margin-right: auto;
+	height: 130px;
+	width: 90%;
+}
+
+#ulLinks{
+	width: 200px;
+}
+
+.bottomLinks{
+	background-color:#232528;
+	color: white;
+	text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size:1.5em;
+}
+
+.bottomList{
+	display: block;
+    margin: .5em;
+}
+
+#birdUpWrapper{
+    margin: 1em auto 1em auto;
+
+}
+#birdUp{
+    background-image: url("/static/images/birdUp.jpg");
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    padding-top: 30vw;
+    border-radius: 50%;
+    top: 10vh;
+    background-size: cover;
+}
+
+
+#theAbout{
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid solid solid;
+    border-width: 2px 2px 1px;
+    border-color: #eeeeee;
+    border-radius: 5px 5px 0 0;
+    width: 80%;
+    padding: 0 1em 0 1em;
+}
+
+#theWho{
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid solid solid;
+    border-width: 1px 2px 2px;
+    border-color: #eeeeee;
+    width: 80%;
+    padding: 0 1em 0 1em;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+}
+
+.about{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica, sans-serif;
+}
+
+#aboutHeader{
+    text-align: center;
+}
+.login {
+    width: 60%;
+    margin: 16px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 1px #ccc;
+    padding: 0px 10px;
+    text-align: left;
+}
+
+#404{
+   background-image: url("/static/images/fourOfour.gif");
+    height: 145px;
+    width: 200px;
+}
+
+#headerImageDiv {
+    height: 20vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+#headerImage {
+    position:absolute;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-content {
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#welcomeWrapper{
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid solid solid;
+    border-width: 1px 2px 2px;
+    border-color: #eeeeee;
+    width: 80%;
+    padding: 0 1em 0 1em;
+    border-radius: 0 0 5px 5px;
+}
+
+.listbox{
+    margin-left: 6px;
+    margin-top: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 2px;
+    height: 300px;
+}
+.assignments{
+    display: flex;
+}
+
+#assignButton{
+    border: 0px;
+    margin: 10px;
+    width: 50%;
+    font-size: 1.1em;
+    border-radius: 4px;
+    padding: 6px;
+    color: black;
+    background: #fdba2f;
+    margin-bottom: 20px;
+}
+
+#userInfo{
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif
+    
+}

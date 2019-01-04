@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+    <div class="main-content">
+        <h1>FAQ</h1>
+        <p id="faq" >
+        This is where frequently asked questions would go if we had any.
+        </p>
+        <div id="out">{{out|linebreaks}}</div>
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

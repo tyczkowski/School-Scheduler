@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+
+    <h1>Section Detail</h1>
+
+    <div class="section" style="padding: 32px; background-color: lightgray">
+
+        <form method="POST" action="{{ action }}"> {% csrf_token %}
+            <div>  {# section info #}
+                <p><b>Section Type:</b><br><input type="text" name="stype" value="{{ section.stype }}" title=""></p>
+                <p><b>Section Number:</b><br><input type="text" name="snum" value="{{ section.snum }}" title=""></p>
+                <p><b>Department:</b><br><input type="text" name="dept" value="{{ section.dept }}" title=""></p>
+                <p><b>Course Number:</b><br><input type="text" name="cnum" value="{{ section.cnum }}" title=""></p>
+                <p><b>Room Number:</b><br><input type="text" name="room" value="{{ section.room }}" title=""></p>
+                <p><b>Instructor:</b><br><input type="text" name="instructor" value="{{ section.instructor }}" title=""></p>
+                <p><b>Days:</b><br><input type="text" name="days" value="{{ section.days }}" title=""></p>
+                <p><b>Time:</b><br><input type="text" name="time" value="{{ section.time }}" title=""></p>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+{% include "main/footer.html" %}
+{% endblock content %}

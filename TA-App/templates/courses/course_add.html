@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+
+    <div class="main-content" style="padding: 32px; background-color: lightgray">
+        <div class="course" style="padding: 32px; background-color: lightgray">
+
+            <h1>Course Add</h1>
+
+            <form method="POST" action="{{ action }}"> {% csrf_token %}
+                <div>  {# course info #}
+                    <p><b>Name:</b><br><input type="text" name="name" value="{{ value.name }}" title=""></p>
+                    <p><b>Department:</b><br><input type="text" name="dept" value="{{ value.dept }}" title=""></p>
+                    <p><b>Course Number:</b><br><input type="text" name="cnum" value="{{ value.cnum }}" title=""></p>
+                    <p><b>Description:</b><br><input type="text" name="description" value="{{ value.description }}" title=""></p>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

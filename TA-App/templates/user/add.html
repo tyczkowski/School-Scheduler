@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+
+    <div class="main-content" style="padding: 32px; background-color: lightgray">
+        <div class="userAdd" style="padding: 32px; background-color: lightgray">
+            <h1>User add/edit</h1>
+            {% if displaystatus %}
+                <p>{{ status }}</p>
+            {% endif %}
+            {% if canedit %}
+                <form method="POST" action="{{ action }}">
+                {% csrf_token %}
+                    <p><b>Username:</b> <br/><input type="text" name="username" value="{{ value.username }}" required></p>
+                    <p><b>Password:</b> <br/><input type="text" name="password" value="{{ value.password }}"></p>
+
+                    {% for role in role_list %}
+                        {% if role == checked_role %}
+                            <input type="radio" name="role" value="{{ role }}" checked>{{ role }}<br/>
+                        {% else %}
+                            <input type="radio" name="role" value="{{ role }}">{{ role }}<br/>
+                        {% endif %}
+                    {% endfor %}
+
+                    <p><b>Address:</b> <br/><input type="text" name="address" value="{{ value.address }}"></p>
+                    <p><b>Phone Number:</b> <br/><input type="text" name="phone_number" value="{{ value.phone_number }}"></p>
+                    <p><b>Email:</b> <br/><input type="text" name="email" value="{{ value.email }}"></p>
+                    <p><b>First Name:</b> <br/><input type="text" name="firstname" value="{{ value.firstname }}"></p>
+                    <p><b>Last Name:</b> <br/><input type="text" name="lastname" value="{{ value.lastname }}"></p>
+                    <p><b>Bio:</b> <br/><input type="text" name="bio" value="{{ value.bio }}"></p>
+
+                    <input type="submit" value="Submit">
+                </form>
+            {% else %}
+                <form>
+                    <p><b>Username:</b> <br/><input type="text" name="username" value="{{ value.username }}" readonly></p>
+                    <p><b>Password:</b> <br/><input type="text" name="password" value="{{ value.password }}" readonly></p>
+
+                    {% for role in role_list %}
+                        {% if role == checked_role %}
+                            <input type="radio" name="role" value="{{ role }}" checked>
+                        {% endif %}
+                    {% endfor %}
+
+                    <p><b>Address:</b> <br/><input type="text" name="address" value="{{ value.address }}" readonly></p>
+                    <p><b>Phone Number:</b> <br/><input type="text" name="phone_number" value="{{ value.phone_number }}" readonly></p>
+                    <p><b>Email:</b> <br/><input type="text" name="email" value="{{ value.email }}" readonly></p>
+                    <p><b>First Name:</b> <br/><input type="text" name="firstname" value="{{ value.firstname }}" readonly></p>
+                    <p><b>Last Name:</b> <br/><input type="text" name="lastname" value="{{ value.lastname }}" readonly></p>
+                    <p><b>Bio:</b> <br/><input type="text" name="bio" value="{{ value.bio }}" readonly></p>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

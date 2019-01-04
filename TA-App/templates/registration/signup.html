@@ -1,0 +1,29 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+<div class="signup">
+    <form method="POST" action="/signup/">
+        {% csrf_token %}
+
+        <div class="input-group">
+            <label class="input-label">First Name</label>
+            <input class="form-control" id="username" maxlength="30" name="first_name" placeholder="First Name" type="text" />
+            <label class="input-label">Last Name</label> 
+            <input class="form-control" id="username" maxlength="30" name="last_name" placeholder="Last Name" type="text" />
+            <label class="input-label">Email</label> 
+            <input class="form-control" id="username" maxlength="30" name="email" placeholder="Email" type="text" />
+            <label class="input-label">Username</label> 
+            <input class="form-control" id="username" maxlength="30" name="username" placeholder="Username" type="text" />
+            <label class="input-label">Password</label> 
+            <input class="form-control" id="password" maxlength="30" name="password1" placeholder="Password" type="password" />
+            <label class="input-label">Confirm Password</label>
+            <input class="form-control" id="password" maxlength="30" name="password2" placeholder="Confirm Password" type="password" /> 
+        </div>
+        
+        <input type="submit" class="button" value="Register"/>
+
+    </form>
+    <a>Already have account?</a>
+    <a href="{% url 'login' %}" style="text-decoration: none; color:blue" >Sign In</a>
+</div>
+{% endblock content %}

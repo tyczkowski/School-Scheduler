@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="courses">
+
+    {% include "main/header.html" %}
+    <div class="main-content">
+        <h1>Course List</h1>
+
+  <div style="padding: 16px;">  {# add button #}
+         <a href="/courses/add">
+            <p> [ Add ] </p>
+         </a>
+    </div>
+
+    {% for course in courses %}
+        <div style="padding: 32px; background-color: lightgray">
+            <p>
+                <a href="detail/{{ course.dept }}{{ course.cnum }}">
+                    {{ course.dept }} {{ course.cnum }} - {{ course.name }}
+                </a>
+            </p>
+        </div> <br>
+
+        {% empty %}
+            <div>No Courses yet.</div>
+
+        {% endfor %}
+
+    </div>
+</div>
+    {% include "main/footer.html" %}
+{% endblock content %}

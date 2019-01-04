@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "main/header.html" %}
+    <div class="main-content">
+        <div id="welcomeWrapper">
+            <h1>Welcome to TA Scheduling!</h1>
+            <div>
+                <p class="about">
+                    The TA scheduling website has multiple capabilities depending on the type of user logged in
+                    (TA, Administrator, Supervisor, Instructor). The main capabilities of the website can be broken down
+                    into the categories based on the links at the top of the websites header bar: Courses, Sections,
+                    Users
+                    and Login/Logout. Home is simply a link to bring a user back to the main page.<br><br>
+
+                    <b>Login/Logout:</b> Pretty self explanatory, if no one is logged in a login button will appear at
+                    the far right
+                    side of the header bar which will take you to the login page. Assuming you have an account set up
+                    you can
+                    log in using your username and password. If you are already logged in the login button on the header
+                    bar will
+                    be replaced with a logout link that can log you out when you're done with your session.<br><br>
+
+                    <b>Courses:</b> Clicking on the Courses link in the header bar will bring you to an initial viewing
+                    page of all
+                    the courses in the database. If you're logged in as a supervisor or administrator, you will notice
+                    an "Add"
+                    link allowing you to add a course which will bring you to a form allowing to input: Name,
+                    Department,
+                    Course Number and Description. If a course exists already you can click directly on the course and
+                    it
+                    will bring up a details page of the course that shows the details including the sections associated
+                    with
+                    the course. If you are an administrator or supervisor you should be able to see a link to edit the
+                    course
+                    which will take you to a form similar to the add form.<br><br>
+
+                    <b>Sections:</b> Clicking on the Sections link in the header bar will bring you to an initial
+                    viewing page of
+                    all of the sections in the database. If you're logged in as a supervisor or administrator, you will
+                    notice
+                    an "Add" link allowing you to add a section which will bring you to a form allowing to input:
+                    Section Type,
+                    Section Number , Department, Course Number, Room Number, Instructor(username), Days and Time. If a
+                    section
+                    exists already you can click directly on the section and it will bring up a details page of the
+                    section
+                    that shows details of a given section. If you are an administrator or supervisor you should be able
+                    to see
+                    a link to edit the section which will take you to a form similar to the add form.<br><br>
+
+                    <b>Users:</b> Clicking on the Users link in the header bar will bring you to an initial viewing page
+                    of
+                    all the users in the database. If no one is logged in, you can still see all the users in the
+                    database
+                    with fields including: User, First Name, Last Name, Email, Assigned Courses/Sections and a bio
+                    assuming
+                    they have these things. If you're logged in as a supervisor or administrator, you will notice a
+                    "Add A User" link next to the Users header which will link you to a form to allow the adding of new
+                    users.
+                    Each currently existing user should also have an "Edit User" link next to their username taking you
+                    to
+                    another form allowing you to change the users information.
+                </p>
+            </div>
+        </div>
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

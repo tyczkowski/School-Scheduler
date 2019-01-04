@@ -1,0 +1,10 @@
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>

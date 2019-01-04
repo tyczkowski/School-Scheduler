@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% include "main/header.html" %}
+
+
+    <div class="main-content" style="padding: 32px; background-color: lightgray">
+
+         <div>  {# edit button #}
+             <a href="/sections/edit/{{ section.cnum }}{{ section.snum }}">
+                <p> [ Edit ] </p>
+             </a>
+        </div>
+
+        <div>  {# section info #}
+            <h1>Section Detail</h1>
+            <p><b>Dept:</b> {{ section.dept }}</p>
+            <p><b>Section Type:</b> {{ section.stype }}</p>
+            <p><b>Section Number:</b> {{ section.snum }}</p>
+            <p><b>Course Number:</b> {{ section.cnum }}</p>
+            <p><b>Room Number:</b>{{ section.room }}</p>
+            <p><b>Instructor:</b> {{ section.instructor }}</p>
+            <p><b>Days:</b> {{ section.days }}</p>
+            <p><b>Time:</b> {{ section.time }}</p>
+        </div>
+
+    </div>
+    {% include "main/footer.html" %}
+{% endblock content %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+</head>
+
+<body>
+<div id="headerImageDiv">
+    <img id="headerImage" src="{% static 'images/prettyTopHeaderImage.jpg' %}"/>
+</div>
+<div class="headerMenu">
+    <ul class="buttons">
+
+        <li >
+            <div class="btn-group" style="background-color:red">
+                <a href="{% url 'home' %}" class="btn">Home</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="btn-group">
+                <a href="{% url 'Course List' %}" class="btn">Courses</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="btn-group">
+                <a href="{% url 'Section List' %}" class="btn">Sections</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="btn-group">
+                <a href="{% url 'User List' %}" class="btn">Users</a>
+            </div>
+        </li>
+
+        {% block content %}
+        <li id="log">
+            <div class="btn-group">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn">Logout</a>
+                {% elif not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="btn">Login</a>
+                {% endif %}
+            </div>
+        </li>
+        {% endblock content %}
+    </ul>
+</div>
+</body>
+</html>

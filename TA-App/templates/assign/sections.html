@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% include "main/header.html" %}
+    <div id=userInfo>
+        {%for u in user%}
+            <a> Assigning User:    {{u.username}} Role:   {{u.role}}</a>
+        {%endfor%}
+
+    </div>
+    
+    <div class="assignments">
+        <form method="POST">
+            {% csrf_token %}
+            <select class=listbox name=section_select size="9">
+                {%for s in sections %}
+                    <option class="listbox-sections">
+                        {{s.course.dept}}-{{ s.cnum }}-{{ s.snum }} Type:{{s.stype}} Instructor:{{s.instructor}} 
+                    </option>
+                {%endfor%}
+            </select>
+            {%for u in user%}
+                <input id=assignButton type="submit" name=assign value="Assign section to {{u.username}}"/>
+            {%endfor%}
+        </form>
+        <select class=listbox name=section_select size="9" style="pointer-events: none; cursor: default; background-color:#f8f8f8; ">
+            {%for u in user_sections %}
+                <option class="listbox-sections">
+                    {{u.course.dept}}-{{ u.cnum }}-{{ u.snum }} Type:{{u.stype}} Instructor:{{u.instructor}} 
+                </option>
+            {% empty %}
+                <option class="listbox-sections">
+                    User is currently not assigned to a section. 
+                </option>
+            {%endfor%}
+        </select>
+    </div>
+    
+    
+    
+    {% include "main/footer.html" %}
+{% endblock content %}
